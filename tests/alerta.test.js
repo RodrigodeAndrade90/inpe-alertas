@@ -1,17 +1,18 @@
-function classificarAlerta(nivel) {
-  if (nivel > 80) return "Crítico";
-  if (nivel > 50) return "Alto";
-  return "Moderado";
-}
+const { classificarAlerta } = require('../src/alerta');
 
-test("alerta crítico se nível for maior que 80", () => {
-  expect(classificarAlerta(90)).toBe("Crítico");
+test('classifica alerta CRÍTICO para valores acima de 80', () => {
+  expect(classificarAlerta(90)).toBe('Crítico');
 });
 
-test("alerta alto se nível entre 51 e 80", () => {
-  expect(classificarAlerta(70)).toBe("Alto");
+test('classifica alerta MODERADO para valores entre 40-80', () => {
+  expect(classificarAlerta(60)).toBe('Moderado');
 });
 
-test("alerta moderado se nível até 50", () => {
-  expect(classificarAlerta(30)).toBe("Moderado");
+test('classifica alerta BAIXO para valores abaixo de 40', () => {
+  expect(classificarAlerta(30)).toBe('Baixo');
+});
+
+// Teste para o exercício 4 - SIMULAR ERRO
+test('teste final CI', () => {
+  expect(2 + 2).toBe(4);
 });
