@@ -1,7 +1,5 @@
-function soma(a, b) {
-  return a + b;
-}
+const { soma } = require('../index');
 
-test("soma de 2 + 3 deve ser 5", () => {
+test('soma de 2 + 3 deve ser 5', () => {
   expect(soma(2, 3)).toBe(5);
 });
