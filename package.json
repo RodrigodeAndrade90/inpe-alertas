@@ -1,8 +1,12 @@
 {
-  "name": "seu-projeto",
+  "name": "docker-app-aula09",
   "version": "1.0.0",
-  "devDependencies": {
-    "eslint": "^8.0.0",
-    "prettier": "^3.0.0"
+  "description": "Aplicação Node.js dockerizada para a atividade prática (Aula 09 - Docker).",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
   }
 }
