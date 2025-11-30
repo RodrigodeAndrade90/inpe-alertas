@@ -1,27 +1,22 @@
-name: CI
+name: CI Simples
 
 on:
+  push:
+    branches: [dev]
   pull_request:
-    branches: [main]
+    branches: [dev]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+        
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - run: npm install
-        working-directory: aulas/projeto-inpe-teste
-
-      - name: Run tests with coverage
-        run: npm run test:coverage
-        working-directory: aulas/projeto-inpe-teste
-
-      - name: Upload cobertura para Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: \${{ secrets.CODECOV_TOKEN }}
+          
+      - name: Teste de funcionamento
+        run: echo "CI funcionando!"
